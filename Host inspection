@@ -1,0 +1,18 @@
+CPU负载
+sar -u 2 5 |awk ‘END{print $3"%"}‘  
+内存负载
+free |awk ‘NR==3{pmem=$3/($3+$4)*100;print pmem"%"}‘
+IO负载
+iostat 3 2|sed -n '/iowait/{n;p;}'|awk 'NR==2 {print $4"%";}'
+文件系统空间
+df -hT
+blkid 
+findmnt
+mount
+lsblk
+fsck 
+
+相关的命令还有：
+top
+ps  -aux /ef 
+dstat 系统资源统计命令
