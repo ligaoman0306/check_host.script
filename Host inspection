@@ -1,3 +1,5 @@
+AAAAAAA
+
 CPU负载
 sar -u 2 5 |awk ‘END{print $3"%"}‘  
 内存负载
